@@ -1,11 +1,3 @@
-//
-//  YRJokeTableViewController.swift
-//  JokeClient-Swift
-//
-//  Created by YANGReal on 14-6-5.
-//  Copyright (c) 2014年 YANGReal. All rights reserved.
-//
-
 import UIKit
 
 
@@ -34,19 +26,6 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
         setupViews()
         loadData()
     }
-    
-    override func viewWillDisappear(animated: Bool)
-    {
-        super.viewWillDisappear(animated)
-          NSNotificationCenter.defaultCenter().removeObserver(self, name: "imageViewTapped", object:nil)
-        
-    }
-     override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(animated)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageViewTapped:", name: "imageViewTapped", object: nil)
-    }
-    
     
     
     func setupViews()
@@ -80,9 +59,9 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
                UIView.showAlertView("提示",message:"加载失败")
               return
             }
-            
-            let arr = data["items"] as! NSArray
-            //println(data)
+            print(data)
+            let arr = data["q_l"] as! NSArray
+
             for data : AnyObject  in arr
             {
                self.dataArray.addObject(data)
@@ -98,16 +77,13 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
     {
         if jokeType == .HotJoke //最热糗事
         {
-            return "http://m2.qiushibaike.com/article/list/suggest?count=20&page=\(page)"
+            return "http://58.215.141.90/"
         }
-        else if jokeType == .NewestJoke //最新糗事
+        else
         {
-           return "http://m2.qiushibaike.com/article/list/latest?count=20&page=\(page)"
+           return "http://58.215.141.90/"
         }
-        else//有图有真相
-        {
-            return "http://m2.qiushibaike.com/article/list/imgrank?count=20&page=\(page)"
-        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,25 +101,14 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
         return  self.dataArray.count;
     }
 
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as? YRJokeCell
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
         cell!.data = data
-        return cell!;
+        return cell!
     }
-    
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-//
-//        var cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath!) as? YRJokeCell
-//        var index = indexPath!.row
-//        var data = self.dataArray[index] as NSDictionary
-//        cell!.data = data
-//        return cell!
-//    }
-
-     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
      {
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
@@ -158,20 +123,10 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
         self.navigationController!.pushViewController(commentsVC, animated: true)
     }
     
-     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
+    func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
      {
         loadData()
      }
     
-    func imageViewTapped(noti:NSNotification)
-    {
-        
-        let imageURL = noti.object as! String
-        let imgVC = YRImageViewController(nibName: nil, bundle: nil)
-        imgVC.imageURL = imageURL
-        self.navigationController!.pushViewController(imgVC, animated: true)
-        
-       
-    }
-    
+
 }

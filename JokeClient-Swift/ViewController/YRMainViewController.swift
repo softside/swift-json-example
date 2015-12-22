@@ -17,7 +17,7 @@ class YRMainViewController: UITabBarController {
     let titleColor:UIColor =  UIColor(red:52/255.0, green:156/255.0,blue:150/255.0,alpha: 1)
     
     
-    let itemArray = ["最新","热门","真相","关于"]
+    let itemArray = ["最新","热门","真相"]
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -84,8 +84,7 @@ class YRMainViewController: UITabBarController {
         vc2.jokeType = .HotJoke
         let vc3 = YRJokeTableViewController()
         vc3.jokeType = .ImageTruth
-        let vc4 = YRAboutViewController(nibName: "YRAboutViewController", bundle: nil)
-        self.viewControllers = [vc1,vc2,vc3,vc4]
+        self.viewControllers = [vc1,vc2,vc3]
     }
     
     
@@ -115,9 +114,7 @@ class YRMainViewController: UITabBarController {
         self.title = itemArray[index-100] as String
         self.selectedIndex = index-100
     }
-    
-    
-    
+
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -126,15 +123,5 @@ class YRMainViewController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
