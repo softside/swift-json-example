@@ -44,16 +44,12 @@ class YRJokeCell: UITableViewCell {
         guard ((self.data) != nil) else{
             return;
         }
-        print(self.data)
-
 
         let content = self.data.stringAttributeForKey("title")
         let height = content.stringHeightWith(17,width:300)
        
         self.contentLabel!.setHeight(height)
         self.contentLabel!.text = content
-        
-
     }
     
     

@@ -35,8 +35,6 @@ class YRMainViewController: UITabBarController {
         super.viewDidLoad()
         setupViews()
         initViewControllers()
-     //   loadData()
-        // Do any additional setup after loading the view.
     }
     
     func setupViews()

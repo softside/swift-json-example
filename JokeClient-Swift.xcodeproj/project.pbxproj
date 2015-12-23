@@ -31,6 +31,8 @@
 		6ED8F37E194088F200644CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8F37D194088F200644CB6 /* AppDelegate.swift */; };
 		6ED8F380194088F200644CB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ED8F37F194088F200644CB6 /* Images.xcassets */; };
 		6ED8F38C194088F300644CB6 /* JokeClient_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED8F38B194088F300644CB6 /* JokeClient_SwiftTests.swift */; };
+		DBD991721C2A936000B03A5F /* answerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD991701C2A936000B03A5F /* answerCell.swift */; };
+		DBD991731C2A936000B03A5F /* answerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBD991711C2A936000B03A5F /* answerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		6ED8F385194088F300644CB6 /* JokeClient-SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JokeClient-SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED8F38A194088F300644CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ED8F38B194088F300644CB6 /* JokeClient_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeClient_SwiftTests.swift; sourceTree = "<group>"; };
+		DBD991701C2A936000B03A5F /* answerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = answerCell.swift; sourceTree = "<group>"; };
+		DBD991711C2A936000B03A5F /* answerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = answerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				6E53E918194352DE0021598F /* YRCommnentsCell.swift */,
+				DBD991701C2A936000B03A5F /* answerCell.swift */,
+				DBD991711C2A936000B03A5F /* answerCell.xib */,
 				6E53E919194352DE0021598F /* YRCommnentsCell.xib */,
 				6E53E91B194352DE0021598F /* YRJokeCell.swift */,
 				6E53E91C194352DE0021598F /* YRJokeCell.xib */,
@@ -297,6 +303,7 @@
 				6E53E908194352320021598F /* avatar.jpg in Resources */,
 				6E53E925194352DE0021598F /* YRRefreshView.xib in Resources */,
 				6E53E939194356810021598F /* 02.png in Resources */,
+				DBD991731C2A936000B03A5F /* answerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E53E924194352DE0021598F /* YRRefreshView.swift in Sources */,
+				DBD991721C2A936000B03A5F /* answerCell.swift in Sources */,
 				6E53E932194353060021598F /* YRHttpRequest.swift in Sources */,
 				6E53E92D194353060021598F /* FileUtility.swift in Sources */,
 				6E53E91F194352DE0021598F /* YRCommnentsCell.swift in Sources */,

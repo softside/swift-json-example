@@ -59,7 +59,6 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
                UIView.showAlertView("提示",message:"加载失败")
               return
             }
-            print(data)
             let arr = data["q_l"] as! NSArray
 
             for data : AnyObject  in arr
@@ -119,7 +118,7 @@ class  YRJokeTableViewController:UIViewController,YRRefreshViewDelegate,UITableV
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
-        commentsVC.jokeId = data.stringAttributeForKey("id")
+        commentsVC.jokeId = data.stringAttributeForKey("qid")
         self.navigationController!.pushViewController(commentsVC, animated: true)
     }
     
